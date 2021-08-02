@@ -11,26 +11,40 @@ const con = mysql.createConnection({
  });
 
 
+//  app.get("/users" , function(req,res){
+	 
+// 	 const unko = req.query.id;
+// 	 res.send("hello," + unko);
+	 
+ 
+//  });
 
- app.get("/customers", (req,res,next) => {
+
+ //localhost:3000/cutomers?id=数字 で任意のレコードを抽出
+
+ app.get("/customers" , (req,res,next) => {
 
  	const sql = "select * from test.customers";
+	 const search = req.query.id;
  	con.query(sql, function (err,result,fields){
  		if(err) throw err;
  	
- 		res.send(result);
+ 		res.send(result[search]);
 		
  	});
  	});
+
+ 
 
  app.get("/salary", (req,res) => {
 
 	
 	const sql = "select * from test.salary";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 		
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
@@ -39,10 +53,11 @@ const con = mysql.createConnection({
 
 	
 	const sql = "select * from test.belongto";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 		
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
@@ -51,10 +66,11 @@ const con = mysql.createConnection({
 
 	
 	const sql = "select * from test.belongto";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 		
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
@@ -63,10 +79,11 @@ const con = mysql.createConnection({
 
 	
 	const sql = "select * from test.categories";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 		
-		res.send(result);
+		res.send(result[serach]);
 		
 	});
 	});
@@ -75,10 +92,11 @@ const con = mysql.createConnection({
 
 	
 	const sql = "select * from test.customerclasses";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 		
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
@@ -87,10 +105,11 @@ const con = mysql.createConnection({
 
 	
 	const sql = "select * from test.departments";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 		
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
@@ -99,10 +118,11 @@ const con = mysql.createConnection({
 
 	
 	const sql = "select * from test.employees";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 		
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
@@ -111,10 +131,11 @@ const con = mysql.createConnection({
 
 	
 	const sql = "select * from test.member";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 		
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
@@ -123,10 +144,11 @@ const con = mysql.createConnection({
 
 
 	const sql = "select * from test.member2";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 		
-		res.send(result);
+		res.send(result[serch]);
 		
 	});
 	});
@@ -135,10 +157,11 @@ const con = mysql.createConnection({
 
 	
 	const sql = "select * from test.memberb";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 	
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
@@ -147,10 +170,11 @@ const con = mysql.createConnection({
 
 	
 	const sql = "select * from test.prefecturals";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 	
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
@@ -159,10 +183,11 @@ const con = mysql.createConnection({
 
 
 	const sql = "select * from test.products";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 		
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
@@ -171,10 +196,11 @@ const con = mysql.createConnection({
 
 	
 	const sql = "select * from test.sales";
+	const search = req.query.id;
 	con.query(sql, function (err,result,fields){
 		if(err) throw err;
 	
-		res.send(result);
+		res.send(result[search]);
 		
 	});
 	});
